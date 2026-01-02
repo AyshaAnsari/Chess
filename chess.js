@@ -392,6 +392,23 @@ class ChessGame {
         // Handle captures
         if (targetPiece) {
             this.capturedPieces[this.currentPlayer].push(targetPiece);
+            
+            // Update castling rights if a rook is captured
+            if (targetPiece.type === 'rook') {
+                if (toRow === 0) { // Black's back rank
+                    if (toCol === 0) {
+                        this.castlingRights.black.queenSide = false;
+                    } else if (toCol === 7) {
+                        this.castlingRights.black.kingSide = false;
+                    }
+                } else if (toRow === 7) { // White's back rank
+                    if (toCol === 0) {
+                        this.castlingRights.white.queenSide = false;
+                    } else if (toCol === 7) {
+                        this.castlingRights.white.kingSide = false;
+                    }
+                }
+            }
         }
 
         // Reset en passant
