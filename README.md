@@ -1,4 +1,4 @@
-# ♔ Chess Game - Multiplayer Edition ♚
+# ♔ Chess Game - Multiplayer Edition
 
 A fully-featured, browser-based chess game with complete rule implementation, light/dark mode support, and comprehensive game statistics tracking.
 
